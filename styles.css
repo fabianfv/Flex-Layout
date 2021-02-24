@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+/**********
+* borders *
+***********/
+
+.main-content,
+.page-footer,
+.page-header {
+  border: 1.3rem solid black;
+}
+
+.top-elements,
+.articles {
+  border-bottom: 1.3rem solid black;
+}
+
+/********************
+* background colors *
+*********************/
+
+.top-elements {
+  background-color: #2d4059;
+}
+
+.logo,
+.social,
+.menu {
+  background-color: #ea5455;
+}
+
+.bottom-elements {
+  background-color: #ff8343;
+}
+
+.banner {
+  background-color: #fed460;
+}
+
+.articles {
+  background-color: #4e4e6a;
+}
+
+.article {
+  background-color: #1f6cb0;
+}
+
+.pager {
+  background-color: #70a3c4;
+}
+
+.aside {
+  background-color: #f73f52;
+}
+
+.aside-element {
+  background-color: #feea85;
+}
+
+.page-footer {
+  background-color: #e6af2e;
+}
+
+/*********
+* Layout *
+**********/
+
+body,
+.page-header,
+.top-elements,
+.bottom-elements,
+.main-content,
+.articles,
+.aside,
+.page-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+/*********
+* Sizing *
+**********/
+
+.page-header {
+  flex-basis: 20%;
+}
+
+.main-content {
+  flex-basis: 70%;
+}
+
+  .articles {
+    flex-basis: 70%;
+  }
+
+  .aside {
+    flex-basis: 30%;
+  }
+
+.page-footer {
+  flex-basis: 10%;
+}
+
+.logo,
+.menu,
+.social,
+.banner,
+.article,
+.pager,
+.aside-element,
+.footer-element {
+  flex-basis: 1.5rem;
+}
+
+.bottom-elements, .banner,
+.article,
+.pager,
+.aside-element,
+.footer-element {
+  flex-grow: 1;
+}
+
+/**********
+* Spacing *
+***********/
+
+.top-elements,
+.bottom-elements,
+.articles,
+.aside {
+  padding: 1rem;
+}
+
+.logo,
+.social,
+.menu,
+.banner,
+.article,
+.pager,
+.aside-element {
+  margin: 0.5rem;
+}
+
+.main-content {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
