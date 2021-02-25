@@ -22,6 +22,13 @@ body {
   border-bottom: 1.3rem solid black;
 }
 
+@media only screen and (min-width: 1024px) {
+  .articles {
+    border-bottom: 0;
+    border-right: 1.3rem solid black;
+  }
+}
+
 /********************
 * background colors *
 *********************/
@@ -93,6 +100,12 @@ body,
   .articles {
     flex-wrap: wrap;
     align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-content {
+    flex-direction: row;
   }
 }
 
