@@ -10,14 +10,11 @@ body {
 /**********
 * borders *
 ***********/
-
 .main-content,
-.page-footer,
-.page-header {
+.page-footer {
   border: 1.3rem solid black;
 }
 
-.top-elements,
 .articles {
   border-bottom: 1.3rem solid black;
 }
@@ -32,20 +29,6 @@ body {
 /********************
 * background colors *
 *********************/
-
-.top-elements {
-  background-color: #2d4059;
-}
-
-.logo,
-.social,
-.menu {
-  background-color: #ea5455;
-}
-
-.bottom-elements {
-  background-color: #ff8343;
-}
 
 .banner {
   background-color: #fed460;
@@ -82,13 +65,31 @@ body {
 body,
 .page-header,
 .top-elements,
-.bottom-elements,
+.social,
 .main-content,
 .articles,
 .aside,
 .page-footer {
   display: flex;
   flex-direction: column;
+}
+
+.social {
+  align-items: center;
+  justify-content: center;
+}
+
+.top-elements {
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-basis: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -133,9 +134,6 @@ body,
   flex-basis: 10%;
 }
 
-.logo,
-.menu,
-.social,
 .banner,
 .article,
 .pager,
@@ -144,19 +142,18 @@ body,
   flex-basis: 1.5rem;
 }
 
+.logo {
+  max-width: min(3rem, 15vw);
+}
+
 @media only screen and (min-width: 768px) {
-  .logo,
   .menu,
   .social {
     height: 1.5rem;
   }
 
-  .logo,
-  .social {
-    flex-basis: 20%;
-  }
   .menu {
-    flex-basis: 60%;
+    flex-basis: 80%;
   }
 
   .article,
@@ -167,7 +164,6 @@ body,
   }
 }
 
-.bottom-elements,
 .banner,
 .article,
 .pager,
@@ -181,15 +177,11 @@ body,
 ***********/
 
 .top-elements,
-.bottom-elements,
 .articles,
 .aside {
   padding: 1rem;
 }
 
-.logo,
-.social,
-.menu,
 .banner,
 .article,
 .pager,
@@ -197,7 +189,97 @@ body,
   margin: 0.5rem;
 }
 
+.top-elements {
+  row-gap: 2rem;
+  column-gap: 4vw
+}
+
 .main-content {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.menu {
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.menu__item--icon {
+  padding-right: 0.5vw;
+}
+
+.menu__item {
+  margin-right: 1.5vw;
+}
+
+.social {
+  row-gap: 1.5vw;
+}
+
+/*
+* Page Styles
+*/
+
+.page-header {
+  background-image: url(images/cabecera.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bottom-elements {
+  background-color: rgba(202, 202, 202, 0.3);
+  height: 5rem;
+  opacity: 80%;
+  color: #c55a5e;
+  font-size: clamp(2rem, 3.5vw, 7vw);
+  font-family: "Caveat", cursive, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.menu__item {
+  text-decoration: none;
+  color: hsl(0, 0%, 26%);
+  padding: 0.5em;
+}
+
+.menu__item:hover {
+  background-color: hsl(0, 0%, 21%);
+}
+
+.menu__item:hover,
+.menu__item:hover {
+  color: hsl(0, 0%, 99%);
+}
+
+.menu__item--icon,
+.social {
+  color: hsl(0, 0%, 46%);
+}
+
+@media only screen and (max-width: 768px) {
+
+  .top-elements {
+    padding: 0;
+  }
+
+  .menu {
+    background-color: rgb(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 2vw;
+  }
+  
+  .menu__item--icon,
+  .social {
+    font-size: max(1rem, 4vw);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .menu__item--text {
+    display: none;
+  }
 }

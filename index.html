@@ -5,18 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <header class="page-header">
       <div class="top-elements">
-        <div class="logo"></div>
-        <nav class="menu"></nav>
-        <div class="social"></div>
+        <img class="logo" src="images/logo.png" alt="" />
+        <nav class="menu">
+          <a href="#" class="menu__item">
+            <i class="fas fa-home menu__item--icon"></i>
+            <span class="menu__item--text">Inicio</span>
+          </a>
+          <a href="#" class="menu__item">
+            <i class="fas fa-route menu__item--icon"></i>
+            <span class="menu__item--text">Rutas</span>
+          </a>
+          <a href="#" class="menu__item">
+            <i class="fas fa-hotel menu__item--icon"></i>
+            <span class="menu__item--text">Hoteles</span>
+          </a>
+          <a href="#" class="menu__item">
+            <i class="fas fa-plane menu__item--icon"></i>
+            <span class="menu__item--text">Vuelos</span>
+          </a>
+          <a href="#" class="menu__item">
+            <i class="fas fa-envelope menu__item--icon"></i>
+            <span class="menu__item--text">Contacto</span>
+          </a>
+          <div class="social">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+          </div>
+        </nav>
       </div>
-      <section class="bottom-elements">
-        <div class="banner"></div>
-      </section>
+      <div class="bottom-elements">Serás lo que hayas vivido</div>
     </header>
 
     <main class="main-content">
