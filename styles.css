@@ -25,9 +25,7 @@
 * Card Component *
 ******************/
 .card {
-  display: flex;
-  flex-direction: column;
-
+  display: grid;
   color: rgb(70, 69, 69);
   font-family: sans-serif;
 
@@ -36,6 +34,7 @@
 
   padding: 0;
   margin: 0;
+  margin-bottom: 0.5em;
 
   width: 100%;
 }
@@ -48,8 +47,11 @@
 
 @media only screen and (min-width: 768px) {
   .card {
-    flex-basis: 45%;
-    flex-grow: 1;
+    margin-bottom: 0;
+  }
+
+  .card:last-of-type {
+    grid-column: span 2;
   }
 }
 
@@ -60,18 +62,17 @@
   margin: 0;
   padding: 0;
   position: relative;
+  
   display: flex;
-
+  
   /* altura máxima aproximada de las imágenes: 440px */
   height: calc(200px + 20vw);
-
 }
 
 .figure__image {
   display: block;
-  flex-grow: 1;
-
-  max-width: 100%;
+   flex-grow: 1;
+   max-width: 100%;
 
   /*
     Podría haber hecho lo mismo si hubiera puesto
@@ -156,8 +157,6 @@
 
   .menu__item {
     color: rgba(99, 53, 55, 0.8);
-    display: flex;
-    align-items: center;
   }
 
   .menu__item:hover {
@@ -184,9 +183,8 @@
 
 @media only screen and (min-width: 768px) {
   .social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    place-items: center;
     row-gap: 1.5vw;
     margin-left: 1em;
   }
@@ -212,17 +210,18 @@
 *******************/
 
 .pager {
-  flex-basis: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-
   font-family: sans-serif;
   font-weight: 600;
 
   background-color: hsl(354, 96%, 25%);
   padding: 0.8em 0;
   border-radius: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .pager {
+    grid-column: span 2;
+  }
 }
 
 .pager__link {
@@ -235,17 +234,12 @@
 * Page Styles *
 ***************/
 body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin: 0;
   height: 100vh;
 }
 
 .page-header {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 20%;
-
   background-image: url(images/cabecera.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -253,10 +247,9 @@ body {
 }
 
 .top-elements {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+
   margin: 1em 0;
   gap: 2em;
 }
@@ -268,10 +261,8 @@ body {
   font-size: clamp(2rem, 3.5vw, 7vw);
   font-family: "Caveat", cursive, sans-serif;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: grid;
+  place-items: center;
 }
 
 .logo {
@@ -279,51 +270,39 @@ body {
 }
 
 .main-content {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 70%;
-
+  display: grid;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 @media only screen and (min-width: 1024px) {
   .main-content {
-    flex-direction: row;
+    grid-template-columns: 70% 30%;
     margin-bottom: 0;
   }
 }
 
 .articles {
-  gap: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
-  flex-basis: 70%;
-
-  display: flex;
-  flex-direction: column;
 }
 
 @media only screen and (min-width: 768px) {
   .top-elements {
-    flex-direction: row;
+    grid-template-columns: repeat(3, auto);
     margin: 1em;
-    justify-content: space-between;
   }
 
   .articles {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
   }
 }
 
 .aside {
-  display: flex;
-  flex-direction: column;
-
-  flex-basis: 30%;
+  display: grid;
   --gap: 0.5em;
   gap: var(--gap);
   padding: var(--gap);
@@ -333,16 +312,11 @@ body {
 
 .aside-element {
   margin: 0.5rem;
-  flex-grow: 1;
-  flex-basis: 1.5rem;
+  min-height: 1.5rem;
   background-color: #feea85;
 }
 
 .page-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
   font-family: sans-serif;
   font-weight: 700;
   font-size: clamp(0.8em, 1vw, 1.3em);
